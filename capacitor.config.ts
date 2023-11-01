@@ -5,6 +5,7 @@ const config: CapacitorConfig = {
   appName: 'myApp',
   webDir: 'www/browser',
   server: {
+    url: 'http://192.168.2.105:8100',
     androidScheme: 'https',
   },
 };

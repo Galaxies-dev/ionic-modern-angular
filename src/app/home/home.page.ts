@@ -48,7 +48,7 @@ import { catchError, finalize } from 'rxjs';
 export class HomePage implements OnInit {
   private currentPage = 1;
   public movies: any[] = [];
-  public imageBaseUrl = 'http://image.tmdb.org/t/p';
+  public imageBaseUrl = 'https://image.tmdb.org/t/p';
   public isLoading = true;
   public error = null;
   public dummyArray = new Array(5);

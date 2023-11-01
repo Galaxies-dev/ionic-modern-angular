@@ -49,7 +49,7 @@ import { cashOutline, calendarOutline } from 'ionicons/icons';
 })
 export class DetailsPage {
   public movie: WritableSignal<MovieResult | null> = signal<MovieResult | null>(null);
-  public imageBaseUrl = 'http://image.tmdb.org/t/p';
+  public imageBaseUrl = 'https://image.tmdb.org/t/p';
 
   // Load the movie details when the id changes through the URL :id parameter
   @Input()
