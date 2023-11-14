@@ -34,7 +34,11 @@
 
       <ion-badge slot="end"> {{ item.vote_average }} </ion-badge>
     </ion-item>
-    }
+    } @empty { @if (!isLoading) {
+    <ion-item lines="none">
+      <ion-label class="ion-text-center">No movies found</ion-label>
+    </ion-item>
+    } }
   </ion-list>
 
   <ion-infinite-scroll (ionInfinite)="loadMore($event)">

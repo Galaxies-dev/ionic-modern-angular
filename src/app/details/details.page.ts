@@ -1,4 +1,4 @@
-import { Component, Input, WritableSignal, signal } from '@angular/core';
+import { Component, Input, WritableSignal, inject, signal } from '@angular/core';
 import { MovieService } from '../services/movie.service';
 import { MovieResult } from '../services/interfaces';
 import {
@@ -48,6 +48,7 @@ import { cashOutline, calendarOutline } from 'ionicons/icons';
   ],
 })
 export class DetailsPage {
+  private movieService = inject(MovieService);
   public movie: WritableSignal<MovieResult | null> = signal<MovieResult | null>(null);
   public imageBaseUrl = 'https://image.tmdb.org/t/p';
 
@@ -61,7 +62,7 @@ export class DetailsPage {
     });
   }
 
-  constructor(private movieService: MovieService) {
+  constructor() {
     // Load the the required ionicons
     addIcons({
       cashOutline,

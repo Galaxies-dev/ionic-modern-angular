@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import {
   IonHeader,
   IonToolbar,
@@ -46,14 +46,14 @@ import { catchError, finalize } from 'rxjs';
   ],
 })
 export class HomePage implements OnInit {
+  private movieService = inject(MovieService);
+
   private currentPage = 1;
   public movies: any[] = [];
   public imageBaseUrl = 'https://image.tmdb.org/t/p';
   public isLoading = true;
   public error = null;
   public dummyArray = new Array(5);
-
-  constructor(private movieService: MovieService) {}
 
   // Load the first page of movies during component initialization
   ngOnInit() {
