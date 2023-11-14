@@ -4,7 +4,7 @@ This project demonstrates how to use Angular 17 features with the latest version
 
 ### Features
 
-- Ionic UI Components as Standalone Component
+- Ionic UI Components as Standalone Components
 - Angular 17 Control Flow
 - Route Parameter Binding
 - Signals
