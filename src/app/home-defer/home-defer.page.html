@@ -26,6 +26,10 @@
     </ion-item>
     }
   </ion-list>
+
+  <ion-infinite-scroll (ionInfinite)="loadMore($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data..." />
+  </ion-infinite-scroll>
   } @placeholder {
   <ion-list class="ion-padding-top">
     @for (i of dummyArray; track i) {
@@ -41,8 +45,4 @@
   <ion-alert header="Error" [message]="error" isOpen="true" [buttons]="['Ok']" />
 
   } @loading(minimum 1s) { Transition to list.... }
-
-  <ion-infinite-scroll (ionInfinite)="loadMore($event)">
-    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data..." />
-  </ion-infinite-scroll>
 </ion-content>
