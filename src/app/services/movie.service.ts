@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { delay } from 'rxjs/operators';
 import { Observable } from 'rxjs/internal/Observable';
 import { ApiResult, MovieResult } from './interfaces';
@@ -12,7 +12,8 @@ const API_KEY = environment.apiKey;
   providedIn: 'root',
 })
 export class MovieService {
-  constructor(private http: HttpClient) {}
+  private http = inject(HttpClient);
+  constructor() {}
 
   getTopRatedMovies(page = 1): Observable<ApiResult> {
     return this.http
